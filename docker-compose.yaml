@@ -1,11 +1,22 @@
 version: "3"
 services:
-  web:
-    build: .
+  # BACK-END
+  web-back:
+    build: ./backend
     ports:
       - "8080:8080"
-  redis:
-    image: "redis:alpine"
+    redis:
+      image: "redis:alpine"
+
+  # FRONT-END
+  web-front:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    redis:
+      image: "redis:alpine"
+
+  # DATABASE
   mongodb:
       image: mongo:latest
       container_name: mongodb
