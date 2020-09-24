@@ -2,8 +2,24 @@
 
 ## To start this project:
 
-- install Docker on your device
-- pull the image 
+- install Docker on your device: https://docs.docker.com/engine/install/
+
+- You can pull this project directly on Docker Hub...
+
+	- pull the image with docker :
+	``` docker pull accountname/imagename:version ```
+
+	- see your images :
+	``` docker images ```
+
+	- if the image doesn't appear, it means the ``` docker pull ``` failed
+
+
+- ... or clone this repository
+
+	- firstly, you have to compose the project:
+	``` ``` 
+
 
 
 ## Folder architecture:
