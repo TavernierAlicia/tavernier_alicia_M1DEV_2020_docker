@@ -4,7 +4,9 @@
 
 - install Docker on your device: https://docs.docker.com/engine/install/
 
-- You can pull this project directly on Docker Hub...
+- open a terminal
+
+- ### You can pull this project directly on Docker Hub...
 
 	- pull the image with docker :
 	``` docker pull accountname/imagename:version ```
@@ -15,10 +17,22 @@
 	- if the image doesn't appear, it means the ``` docker pull ``` failed
 
 
-- ... or clone this repository
+- ### ... or clone this repository
 
-	- firstly, you have to compose the project:
-	``` ``` 
+	- clone repository:
+	``` git clone https://github.com/TavernierAlicia/tavernier_alicia_M1DEV_2020_docker.git ```
+
+	- go to the repository:
+	``` cd path/to/repo ```
+
+	- now you have to compose the project:
+	``` docker-compose up -d && docker-compose logs -f ``` 
+
+	- and then you can run the project with: 
+	``` docker-compose run web env ```
+
+	- you can stop it with :
+	``` docker-compose stop ```
 
 
 
