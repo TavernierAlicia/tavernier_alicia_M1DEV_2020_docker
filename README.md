@@ -42,6 +42,27 @@
 	- you can stop it with :
 	``` docker-compose stop ```
 
+	- you can now make a CTRL+C to exit logs
+
+	- you can also see your containers with 
+	``` docker ps -a```
+
+	- with this list, you can...
+	``` docker kill [id] ``` to stop the container
+	...
+	``` docker start [id] ``` to start the container
+
+	... or ```docker rm [id]```
+	
+	- you can see the created images with :
+	```docker images```
+	
+	- remove an image with :
+	```docker rmi [id]```
+
+	- start a new container with an image with :
+	```docker run -i --name yourCustomName image:version```
+
 
 
 ## Folder architecture:

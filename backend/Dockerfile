@@ -5,5 +5,5 @@ RUN npm install -g nodemon && \
   npm install jest
 COPY . /usr/src/app
 EXPOSE 8080
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
 

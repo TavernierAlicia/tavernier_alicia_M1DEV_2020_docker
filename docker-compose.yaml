@@ -21,6 +21,8 @@ services:
   web-front:
     container_name: web-front
     build: ./frontend
+    # volumes:
+    #   - ./src:/usr/src/app/
     ports:
       - "3000:3000"
     depends_on: 
