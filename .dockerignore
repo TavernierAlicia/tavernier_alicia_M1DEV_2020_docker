@@ -1,2 +1,6 @@
-./backend/node_modules
-./frontend/node_modules
+## Logs
+*.log
+
+## Dependency directories
+./backend/node_modules/
+./frontend/node_modules/

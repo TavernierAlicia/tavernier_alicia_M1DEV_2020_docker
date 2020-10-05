@@ -18,6 +18,14 @@
 
 
 - ### ... or clone this repository
+	
+	[WARN]: if you're using Windows, you may have this issue at the start of containers: ```OSError: [Errno 22] Invalid argument: '\\\\?\\C:\\Users\\User\\Documents\\Cours\\deploiment-solutions\\tavernier_alicia_M1DEV_2020_docker\\frontend\\node_modules\\jest\\node_modules\\.bin\\jest'```
+	that's because you already installed "node-modules", maybe for a test? 
+	To fix it, delete "node-modules" folder in "backend" and "frontend" folder.
+
+	[WARN]: Another error could happens: ```Message":"Unhandled exception: Filesharing has been cancelled"...```
+	It tells that you didn't add a Filesharing path while the installation of Docker.
+	To fix it, right click in Docker on your taskbar and select "settings", now go to "ressources" and "file sharing". Then add the path of your repository like this "C:\Users\me\Documents\tavernier_alicia_M1DEV_2020_docker" and press "Enter". You can now click on "Apply & Restart" button and retry.
 
 	- clone repository:
 	``` git clone https://github.com/TavernierAlicia/tavernier_alicia_M1DEV_2020_docker.git ```

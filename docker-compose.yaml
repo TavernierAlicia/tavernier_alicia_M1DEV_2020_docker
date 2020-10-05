@@ -1,13 +1,21 @@
 version: "3"
 services:
+
+  # DATABASE
+  mongodb:
+      image: mongo:latest
+      container_name: mongodb
+      ports:
+          - "27017:27017"
+
   # BACK-END
   web-back:
     container_name: web-back
     build: ./backend
     ports:
       - "8080:8080"
-  redis:
-    image: "redis:alpine"
+    depends_on: 
+      - mongodb
 
   # FRONT-END
   web-front:
@@ -15,25 +23,5 @@ services:
     build: ./frontend
     ports:
       - "3000:3000"
-  redis:
-    image: "redis:alpine"
-
-  # DATABASE
-  mongodb:
-      image: mongo:latest
-      container_name: mongodb
-      hostname: mongodb
-      volumes:
-          - ./.docker/mongodb/mongod.conf:/etc/mongod.conf
-          - ./.docker/mongodb/initdb.d/:/docker-entrypoint-initdb.d/
-          - ./.docker/mongodb/data/db/:/data/db/
-          - ./.docker/mongodb/data/log/:/var/log/mongodb/
-      # env_file:
-      #     - .env
-      environment:
-          MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
-          MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
-          MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
-      ports:
-          - "27017:27017"
-      command: ["-f", "/etc/mongod.conf"]
+    depends_on: 
+      - web-back
